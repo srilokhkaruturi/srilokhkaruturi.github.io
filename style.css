@@ -1,7 +1,11 @@
+p {
+font-family:Helvetica;
+}
+
 
 nav {
     font-size: 14px;
-    font-family: georgia;
+    font-family: Helvetica;
     text-align: center;
 }
 div {
