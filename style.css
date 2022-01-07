@@ -6,7 +6,7 @@ html{
 
 body{
     background-color: white;
-    margin-left: 200px;
+    margin-left: 160px;
 }
 
 img{
@@ -16,22 +16,30 @@ img{
     width:20%;
 }
 
-topnav {
-  overflow: hidden;
+.sidenav {
+  height: 150%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: transparent; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 5px;
 }
-
 
 
 .sidenav a {
-  float:right;
+  float:left;
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
-  padding: 60px 80px;
+  padding: 6px 8px 6px 16px;
+
 }
 
 .sidenav a:hover { 
-  transform: .5s;
+  transform: 1s;
   background-color: #b7b7a4;
 }
 div {
