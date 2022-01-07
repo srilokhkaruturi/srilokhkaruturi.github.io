@@ -1,18 +1,28 @@
-p {
-font-family:Helvetica;
+html{
+    
+    font-family:AlrightSans-Thin;
 }
 
+body{
+    background-color: white;
+}
+
+img{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width:20%;
+}
 
 nav {
-    font-size: 14px;
-    font-family: Helvetica;
+    font-size: 20px;
     text-align: center;
 }
 div {
-    width: 119px;
-    border: solid 1px;
+    width: 354px;
     float: left;
     padding: 10px 0;
+    color:black
 }
 
 a:first-child div {
@@ -25,15 +35,7 @@ a:last-child div {
 }
 
 
-background {
-    background: #fb0;
-    background: -webkit-linear-gradient(#fb0, #950);
-    background:    -moz-linear-gradient(#fb0, #950);
-    background:     -ms-linear-gradient(#fb0, #950);
-    background:      -o-linear-gradient(#fb0, #950);
-    background:         linear-gradient(#fb0, #950);
+@font-face {
+    font-family: AlrightSans-Thin;
+    src: url(AlrightSans-Thin.ttf);
 }
-
-
-
-
