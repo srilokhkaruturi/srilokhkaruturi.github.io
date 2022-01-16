@@ -1,3 +1,16 @@
+<!--  
+
+https://www.youtube.com/watch?v=UAH4dYaA-uI
+
+let currentDate = new Date();
+let cDay = currentDate.getDate();
+let cMonth = currentDate.getMonth() + 1;
+let cYear = currentDate.getFullYear();
+console.log("<b>" + cDay + "/" + cMonth + "/" + cYear + "</b>");
+
+
+
+    -->
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -5,6 +18,9 @@
       <link rel="stylesheet" type="text/css" href="style.css">
         
         <title>NFT Collection</title>
+
+
+
     </head>
     
     <nav>
@@ -19,7 +35,7 @@
     
   
   
-  <body class="h-full">
+  <body onload="getOpenseaItems()">
     <div class="
         flex
         w-full
@@ -30,30 +46,22 @@
         items-center
         space-x-4
       ">
-      <div class="flex flex-col space-y-6">
-        <h3 class="text-center">Listing NFTs for an ETH Address</h3>
-        <div class="flex flex-col space-y-2">
-          <button onclick="loginWithEth()" class="
-              rounded
-              bg-white
-              border border-gray-400
-              hover:bg-gray-100
-              py-2
-              px-4
-              text-gray-600
-              hover:text-gray-700
-            ">
-            Login & Save ETH Address
-          </button>
-          <p id="userAddress" class="text-gray-600"></p>
-          <button id="logoutButton" onclick="logout()" class="hidden text-blue-500 underline">
-            Logout
-          </button>
-        </div>
-        <button onclick="getOpenseaItems()" class="rounded bg-blue-500 hover:bg-blue-700 py-2 px-4 text-white">
-          Get OpenSea Assets
-        </button>
-  
+      <div class="main">
+        <h3 class="text-center" style="    margin-left: auto;
+        margin-right: auto; text-align: center">NFT Collection        
+      <script> let currentDate = new Date();
+        let cDay = currentDate.getDate();
+        let cMonth = currentDate.getMonth() + 1;
+        let cYear = currentDate.getFullYear();
+        document.write(cMonth + "/" + cDay + "/" + cYear);
+        
+        </script>
+      
+      
+      
+      </h3>
+
+    
       </div>
     </div>
   
@@ -64,80 +72,24 @@
     </div>
   
     <script>
-      window.userAddress = null;
-      window.onload = async () => {
-        // Init Web3 connected to ETH network
-        if (!window.ethereum) {
-          alert("No ETH brower extension detected.");
-        }
-  
-        // Load in Localstore key
-        window.userAddress = window.localStorage.getItem("userAddress");
-        showAddress();
-      };
-  
-      // Use this function to turn a 42 character ETH address
-      // into an address like 0x345...12345
-      function truncateAddress(address) {
-        if (!address) {
-          return "";
-        }
-        return `${address.substr(0, 5)}...${address.substr(
-          address.length - 5,
-          address.length
-        )}`;
-      }
-  
-      // Display or remove the users know address on the frontend
-      function showAddress() {
-        if (!window.userAddress) {
-          document.getElementById("userAddress").innerText = "";
-          document.getElementById("logoutButton").classList.add("hidden");
-          return false;
-        }
-  
-        document.getElementById(
-          "userAddress"
-        ).innerText = `ETH Address: ${truncateAddress(window.userAddress)}`;
-        document.getElementById("logoutButton").classList.remove("hidden");
-      }
-  
-      // remove stored user address and reset frontend
-      function logout() {
-        window.userAddress = null;
-        window.localStorage.removeItem("userAddress");
-        showAddress();
-      }
-  
-      // Login with Web3 via Metamasks window.ethereum library
-      async function loginWithEth() {
-        if (window.ethereum) {
-          try {
-            // We use this since ethereum.enable() is deprecated. This method is not
-            // available in Web3JS - so we call it directly from metamasks' library
-            const selectedAccount = await window.ethereum
-              .request({
-                method: "eth_requestAccounts",
-              })
-              .then((accounts) => accounts[0])
-              .catch(() => {
-                throw Error("No account selected!");
-              });
-            window.userAddress = selectedAccount;
-            window.localStorage.setItem("userAddress", selectedAccount);
-            showAddress();
-          } catch (error) {
-            console.error(error);
-          }
-        } else {
-          alert("No ETH brower extension detected.");
-        }
-      }
+      window.userAddress = "0xd8F89eD994d61bD8bB602CBe76c48A1092269689";
+      window.onload = getOpenseaItems;
   
       async function getOpenseaItems() {
         if (!window.userAddress) { return }
+
+        let currentDate = new Date();
+        let cDay = currentDate.getDate()
+        let cMonth = currentDate.getMonth() + 1
+        let cYear = currentDate.getFullYear()
+
+
+
+
+
+
         const osContainer = document.getElementById('openseaItems')
-  
+
         const items = await fetch(`https://api.opensea.io/api/v1/assets?owner=${window.userAddress}&order_direction=desc&offset=0&limit=50`)
           .then((res) => res.json())
           .then((res) => {
@@ -161,10 +113,13 @@
               <div class='flex flex-col'>
                 <img
                   src='${image_url}'
-                  class='w-full rounded-lg' />
+                  class='img' alt=${name} style="display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width:80%;"/>
                 <div class='flex-col w-full space-y-1'>
-                  <p class='text-gray-800 text-lg'>${name}</p>
-                  <p class='text-gray-500 text-xs word-wrap'>${description ?? ''}</p>
+                  <h3 class='text-gray-800 text-lg'>${name}</h3>
+                  <h5 class='text-gray-500 text-xs word-wrap'>${description ?? ''}</h5>
                 </div>
               </div>
             </a>
@@ -175,6 +130,8 @@
         })
       }
     </script>
+
+
   </body>
 
     <div class="bottomText">
