@@ -5,7 +5,116 @@
 <head>
     <meta charset="utf-8" />
     <title>Timeline</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100&display=swap');
+
+      *{
+        font-family: 'Be Vietnam Pro', sans-serif;
+        padding:0;
+        box-sizing: border-box;
+        
+      }
+
+      body{
+        min-height: 0vh;
+          background-color: white;
+          display: flex;
+          margin-left: 160px;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          
+      }
+
+      .sidenav {
+        height: 150%; /* Full-height: remove this if you want "auto" height */
+        width: 160px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: transparent; /* Black */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 5px;
+      }
+
+
+      .sidenav a {
+        float:left;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: lowercase;
+        padding: 6px 8px 6px 16px;
+
+      }
+
+      .sidenav a:hover { 
+        transform: 1s;
+        background-color: #b7b7a4;
+        text-transform: uppercase;
+      }      
+
+
+      .sidenav div {
+      width: 354px;
+      float: left;
+      padding: 10px 0;
+      color:black
+  }
+
+
+    .bottomText{
+    position:fixed;
+    text-align: left;
+    bottom: 0px;
+    left: 0;
+    width: 160px;
+    color: black;
+    padding: 10px 10px;
+    font-size:smaller;
+    }
+
+    .timeline{
+      width:85%;
+      position: relative;
+  
+    }
+
+    .content{
+      background: #efebe9;
+      padding: 20px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .content h2{
+      text-transform: uppercase;
+    }
+    .content h2:hover{
+      font-size: 155%;
+    }
+
+    .content a{
+      color: black;
+      background: white;
+      text-decoration: none;
+      padding: 10px 25px;
+      display: inline-block;
+    }
+    .content a:hover{
+      transform: 1s;
+      background-color: #b7b7a4;
+      text-transform: uppercase;
+    }
+
+
+
+
+
+
+
+      </style>
   
 </head>
 
@@ -13,10 +122,8 @@
     <div class="sidenav">
       <a href="/index.html"><div>About</div></a>
     <a href="/resume.html"><div>Resume</div></a>
+    <a href="/timeline.html"><div>Timeline</div></a>
     <a href="/nft-collection.html"><div>NFT Collection</div></a>
-      <!--    
-           <a href="/timeline.html"><div>Timeline</div></a>
-   -->
     <a href="/contact.html"><div>Contact</div></a>
     </div>
     
@@ -25,42 +132,51 @@
 
   <body>
 
-    <center>
-    <div class="timeline">
+      <h1> Timeline </h1>
 
-      <div class="container left">
-
-        <div class="content">
-          <h2>Roblox</h2>
-          <h3>2014</h3>
-        </div>
-
-      </div>
-
-
-      <div class="container right">
+     <div class="timeline">
 
         <div class="content">
-          <h2>BlockTrace</h2>
-          <h3>2021</h3>
+
+          
+          <h2>Data Science with Python & R </h2>
+          <p class="time">January 16 2022</p>
+          <p>
+            Introduction to Numpy, SciKit-Learn, SciPy, Pandas, Seaborn, MatPlotLib, Data Munging and Cleaning, Data Aggregation, Data Visualization, Kaggle, Machine Learning, Linear Regression, Cross Validation & Bias-Variance Trade-Off,
+            Logistic Regression, K Nearest Neighbors, Decision Trees and Random Forests, K Means Clustering, Principal Component Analysis
+          </p>
+          <a href="https://www.meetup.com/utdcsor/events/282888833/">Read more</a>
         </div>
 
-      </div>
+        <br>
+       
+          <div class="content">
+            <h2>AI/ML UTD Building Specifier </h2>
+            <p class="time">January 15 2022</p>
+            <p>App allows users to be able to take a photo or upload a photo of a building which will determine the name of the building at UTD via machine learning and artificial intelligence.
+              This project was created for the hackathon "HACKREASON 22". The goal of the hackathon was to create an application which will mimic common sense reasonining in AI.
+            </p>
+            <a href="https://github.com/sai-k02/UTD-BUILDING-CLASSIFIER-main">Github</a>
+            <a href="https://devpost.com/software/utd-building-classifier?ref_content=my-projects-tab&ref_feature=my_projects">Read more</a>
 
-      <div class="container left">
+          </div>
 
-        <div class="content">
-          <h2>Roblox</h2>
-          <h3>2014</h3>
-        </div>
-
-      </div>
+        
 
 
-    </div>
 
 
-    </center>
+
+
+
+     </div>
+
+
+     <div class="bottomText">
+      created with HTML/CSS/JS
+   </div>
+
+
 
 
 
