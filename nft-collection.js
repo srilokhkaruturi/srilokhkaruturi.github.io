@@ -1,12 +1,3 @@
-function printDate() {
-    let currentDate = new Date();
-    let cDay = currentDate.getDate();
-    let cMonth = currentDate.getMonth() + 1;
-    let cYear = currentDate.getFullYear();
-    document.write(cMonth + "/" + cDay + "/" + cYear);
-}
-
-
 window.userAddress = "0xd8F89eD994d61bD8bB602CBe76c48A1092269689";
 window.onload = getOpenseaItems;
   
@@ -63,4 +54,12 @@ width:80%;"/>
 
     osContainer.appendChild(newElement)
   })
+}
+
+function printDate() {
+  let currentDate = new Date();
+  let cDay = currentDate.getDate();
+  let cMonth = currentDate.getMonth() + 1;
+  let cYear = currentDate.getFullYear();
+  document.write(cMonth + "/" + cDay + "/" + cYear);
 }
