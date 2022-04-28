@@ -9,22 +9,45 @@
 </head>
 
 <body>
-<h1 id="creator_name">Srilokh Karuturi (SXK180163) <h1>
-<h1 id="creator_name">Virinchi Racherla(VRR180001)<h1></h1>
+<!-- CHANGE 1 ADD NEW HTML ELEMENTS (SEE JAVASCRIPT DRIVER CODE ON LINE 34, 35)     -->
+<h1 id="creator_name_one"><h1>
+<h1 id="creator_name_two"><h1></h1>
+
 <h2 id="program_name">4337.001 Factorial Program<h2>
-<h3>This program demonstrates proficiency in HTML, CSS, JS.<h3>
-<h4>Instructions: Put number into input box and then press compute</h4>
 
+<!-- CHANGE 2 ADD/REMOVING NEW HTML ELEMENTS (SEE JAVASCRIPT DRIVER CODE ON LINE 38)     -->
+<button id="introButton">See Intro</button>
+<p id="intro"><p>
 
+<h4>Quiz: Quiz 7</h4>
+<h4>Instructions: Put number into input box and then press compute.</h4>
 <input id="input"></input>
-<button id="compute"> 
+
+<!-- CHANGE 2 REACT TO A HTML EVENT (SEE JAVASCRIPT DRIVER CODE ON LINE 42)     -->
+<button id="computeButton"> 
 Compute
 </button>
 
-<script> 
-document.getElementById("compute").onclick = function() {compute(document.getElementById("input").value); };
-</script>
+<!-- PART OF CHANGE 2 BUT SIMPLE CHANGE THE BACKGROUND COLOR BACK TO WHITE-->
+<button id="rbtn">Reset Color</button>
 
+<script> 
+// CHANGE 1 ADD NEW HTML ELEMENTS (SEE HTML IMPLEMENTATION CODE ON LINE 13, 14) (SEE JAVASCRIPT IMPLEMENTATION IN factorial.js) 
+document.getElementById("creator_name_one").innerHTML = getCreatorOne();
+document.getElementById("creator_name_two").innerHTML = getCreatorTwo();
+
+// CHANGE 2 ADD/REMOVE HTML ELEMENT (SEE HTML IMPLEMENTATION CODE ON LINE 27, 29) (SEE JAVASCRIPT IMPLEMENTATION IN factorial.js) 
+document.getElementById('introButton').onclick = function() {document.getElementById('intro').innerHTML = processIntro()};
+
+
+// CHANGE 3 REACT HTML ELEMENT (SEE HTML IMPLEMENTATION CODE ON LINE 27, 29) (SEE JAVASCRIPT IMPLEMENTATION IN factorial.js) 
+document.getElementById("computeButton").onclick = function() {compute(document.getElementById("input").value);};
+
+// CALL RESET BUTTON JAVA SCRIPT FUNCTION IN factorial.js
+document.getElementById('rbtn').onclick = changeButtonResetColor;
+
+
+</script>
 
 
 </body>
