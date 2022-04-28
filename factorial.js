@@ -1,6 +1,7 @@
 function compute(num) {
     var factorialResult = factorialize(num);
     var output = num + "! = " + factorialResult;
+    changeButtonColor();
     alert(output);
 
 }
@@ -27,22 +28,28 @@ function getCreatorTwo(){
 }
 
 function changeButtonColor() {
-   // document.body.style.background.color = "purple";
    document.body.style.backgroundColor = "purple";
     return false;
 }  
 
-//<script src="factorial.js"></script>
 
 function changeButtonResetColor() {
-    // document.body.style.background.color = "purple";
     document.body.style.backgroundColor = "white";
      return false;
  }  
 
 
  function processIntro(){
-     if (document.getElementById('introButton').value == "See Intro"){
+    var buttonValue = document.getElementById('introButton').textContent;
+
+     if( buttonValue== "See Intro"){
+        document.getElementById('introButton').textContent = "Close Button";
+
         return "This program demonstrates proficiency in HTML, CSS, JS.";
+     }
+     else{
+         
+         document.getElementById('introButton').textContent = "See Intro";
+         return ""
      }
  }
